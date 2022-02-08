@@ -34,15 +34,13 @@ function validatePassword(password) {
         isPasswordValid = false
     }
 
-
     let returnObject = {
         'unmetConditionsArray' : unmetConditionsArray,
         'conditionsPassed' : conditionCounter,
         'isPasswordValid' : isPasswordValid
     }
-    console.log(returnObject)
+
     return returnObject
 }
-
 
 module.exports = validatePassword
