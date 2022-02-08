@@ -24,13 +24,22 @@ function validatePassword(password) {
         conditionCounter -= 1
     }
 
-
     if (3 <= conditionCounter) {
         isPasswordValid = true
     } else {
         isPasswordValid = false
     }
 
+    // if (unmetConditionsArray.includes('Invalid password: Must have at least one lowercase letter')) {
+    //     isPasswordValid = false
+    // } else {
+    //     if (3 <= conditionCounter) {
+    //         isPasswordValid = true
+    //     } else {
+    //         isPasswordValid = false
+    //     }
+    // }
+    
     let returnObject = {
         'unmetConditionsArray' : unmetConditionsArray,
         'conditionsPassed' : conditionCounter,

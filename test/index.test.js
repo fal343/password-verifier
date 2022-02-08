@@ -16,9 +16,14 @@ describe('Test validatePassword', () => {
     test('Password should have at least one uppercase Letter', () => {
         expect(validatePassword('mdkejs23ds').unmetConditionsArray.includes('Invalid password: Must have at least one uppercase letter')).toBe(true)
     })
+
     test('Password should have one lowercase letter at least', () => { 
         expect(validatePassword('MDKEDFJS$12').unmetConditionsArray.includes('Invalid password: Must have at least one lowercase letter')).toBe(true)
     })
+    test('Passwords that have no lowercase letters should be invalid', () => { 
+        expect(validatePassword('MDKEDFJS$12').isPasswordValid).toBe(false)
+    })
+
     test('Password should have at least one number', () => {
         expect(validatePassword('DFERdef$qw').unmetConditionsArray.includes('Invalid password: Must have at least one number')).toBe(true)
     })
