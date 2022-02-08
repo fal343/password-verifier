@@ -2,7 +2,7 @@ function validatePassword(password) {
     let unmetConditionsArray = []
     let isPasswordValid;
     let conditionCounter = 5
-    
+
     if (password == null) {
         unmetConditionsArray.push('Invalid password: Password is null')
         conditionCounter -= 1
@@ -25,17 +25,21 @@ function validatePassword(password) {
     }
 
 
-    if (conditionCounter > 0) {
+    if (3 <= conditionCounter) {
         isPasswordValid = true
+    } else {
+        isPasswordValid = false
     }
 
     let returnObject = {
         'unmetConditionsArray' : unmetConditionsArray,
+        'conditionsPassed' : conditionCounter,
         'isPasswordValid' : isPasswordValid
     }
-
+    console.log(returnObject)
     return returnObject
 }
 
 
 module.exports = validatePassword
+// validatePassword('D1')
