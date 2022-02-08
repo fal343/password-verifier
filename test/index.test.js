@@ -17,7 +17,7 @@ describe('Test validatePassword', () => {
         expect(validatePassword('mdkejs23ds')).toBe('Invalid password: Must have at least one uppercase letter')
     })
     test('Password should have one lowercase letter at least', () => {
-        expect(validatePassword('MDKEJS$12')).toBe('Invalid password: Must have at least one lowercase letter')
+        expect(validatePassword('MDKEDFJS$12')).toBe('Invalid password: Must have at least one lowercase letter')
     })
     test('Password should have at least one number', () => {
         expect(validatePassword('DFERdef$qw')).toBe('Invalid password: Must have at least one number')
