@@ -30,16 +30,11 @@ function validatePassword(password) {
         isPasswordValid = false
     }
 
-    // if (unmetConditionsArray.includes('Invalid password: Must have at least one lowercase letter')) {
-    //     isPasswordValid = false
-    // } else {
-    //     if (3 <= conditionCounter) {
-    //         isPasswordValid = true
-    //     } else {
-    //         isPasswordValid = false
-    //     }
-    // }
-    
+    if (unmetConditionsArray.includes('Invalid password: Must have at least one lowercase letter') === true) {
+        isPasswordValid = false
+    }
+
+
     let returnObject = {
         'unmetConditionsArray' : unmetConditionsArray,
         'conditionsPassed' : conditionCounter,
@@ -51,4 +46,3 @@ function validatePassword(password) {
 
 
 module.exports = validatePassword
-// validatePassword('D1')

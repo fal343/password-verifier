@@ -31,9 +31,10 @@ describe('Test validatePassword', () => {
         expect(validatePassword('D152ed1f$qw').isPasswordValid).toBe(true)
         expect(validatePassword('Plcd$edq234d').isPasswordValid).toBe(true)
     })
-    test('Passwords that pass three or more conditions should pass', () => {
+    test('Passwords that pass three or more conditions should pass, unless they have no lowercase letters', () => {
         expect(validatePassword('D1s').isPasswordValid).toBe(true)
-        expect(validatePassword('FD3456DRTF34').isPasswordValid).toBe(true)
+        expect(validatePassword('fd3456drTF34').isPasswordValid).toBe(true)
+        expect(validatePassword('FD3456DRTF34').isPasswordValid).toBe(false)
     })
     test('Passwords that do not three or more conditions should fail', () => {
         expect(validatePassword('D').isPasswordValid).toBe(false)
